@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈正豪 - AI 产品负责人简历</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent-color: #00ff9d; /* Neon Green */
+            --accent-secondary: #ffffff;
+            --border-color: #2a2d35;
+            --card-bg: #16181d;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        @page {
+            size: A4;
+            margin: 10mm 0 0 0;
+            background: var(--bg-color);
+            
+            @top-left {
+                content: counter(page) "/" counter(pages);
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 8pt;
+                color: rgba(255, 255, 255, 0.4);
+                padding-left: 12mm;
+                padding-top: 5mm;
+            }
+        }
+
+        html {
+            background-color: var(--bg-color);
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            width: 210mm;
+            min-height: 297mm;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Resume Container for A4 display */
+        .resume-container {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 12mm 12mm;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 7mm;
+            background: 
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px) 0 0 / 20mm 20mm,
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px) 0 0 / 20mm 20mm;
+            background-color: var(--bg-color);
+        }
+
+        /* Remove old Sidebar Styling */
+        .sidebar {
+            display: none; /* Hide old sidebar */
+        }
+
+        /* Footer Section - Single Column Stack */
+        .resume-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 5mm;
+            border-top: 1px solid var(--border-color);
+            padding-top: 7mm;
+        }
+
+        /* Education Section style tweak */
+        .resume-education {
+            border-top: none; /* Already has footer top border */
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .edu-row {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr 0.8fr;
+            gap: 4mm;
+            font-size: 9.5pt;
+            margin-bottom: 2mm;
+            align-items: baseline;
+        }
+
+        .edu-row .edu-school {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 10pt;
+        }
+
+        .edu-row .edu-degree {
+            color: var(--text-secondary);
+        }
+
+        .edu-row .edu-major {
+            color: var(--text-secondary);
+        }
+
+        .edu-row .edu-time {
+            font-family: var(--font-mono);
+            color: var(--text-secondary);
+            text-align: right;
+        }
+
+        .resume-footer section {
+            /* Remove any border from sections in footer */
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 7mm; /* Increased gap between sections */
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 28pt;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 0;
+            color: var(--accent-secondary);
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 13pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin: 0 0 3mm 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5mm;
+            font-family: var(--font-mono);
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Space between icon and text */
+        }
+
+        h2 .lucide {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2.5;
+            opacity: 0.9;
+        }
+
+        /* Removed ::before content '//' as we now have icons */
+        h2::before {
+            content: none;
+        }
+
+        h3 {
+            font-size: 14pt;
+            font-weight: 600;
+            margin: 0 0 2mm 0;
+            color: var(--text-primary);
+        }
+
+        h4 {
+            font-size: 10.5pt;
+            font-weight: 500;
+            margin: 0 0 2mm 0;
+            color: var(--text-secondary);
+        }
+
+        p, li {
+            font-size: 9.5pt; /* Slightly smaller text */
+            color: var(--text-secondary);
+            margin: 0 0 1.5mm 0;
+        }
+
+        ul {
+            padding-left: 4mm;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        ul li {
+            position: relative;
+            margin-bottom: 1.5mm;
+        }
+
+        ul li::before {
+            content: '>';
+            position: absolute;
+            left: -4mm;
+            color: var(--accent-color);
+            font-family: var(--font-mono);
+            font-size: 8pt;
+            top: 2px;
+        }
+
+        /* Header Section */
+        .header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 6mm;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 4mm;
+            position: relative;
+        }
+
+        .header-info h1 {
+            margin-bottom: 2mm;
+        }
+
+        .header-title {
+            font-family: var(--font-mono);
+            font-size: 11pt;
+            color: var(--accent-color);
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-family: var(--font-mono);
+            font-size: 8.5pt;
+            color: var(--text-secondary);
+        }
+
+        .contact-info div {
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 2mm;
+            line-height: 1.2;
+        }
+        
+        .contact-info svg {
+            width: 14px;
+            height: 14px;
+            color: var(--accent-color);
+            opacity: 0.9;
+        }
+
+        /* Summary Section */
+        .summary-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 4mm;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .summary-box::before {
+            display: none;
+        }
+
+        /* Vision Statement Style */
+        .vision-statement {
+            font-size: 10pt; /* Match list title size */
+            font-weight: 600; /* Slightly lighter than titles (700) or match it */
+            color: #fff;
+            line-height: 1.5;
+            margin-bottom: 5mm;
+            padding-bottom: 4mm;
+            border-bottom: 1px dashed rgba(255,255,255,0.1); /* Subtle separator */
+        }
+        
+        .vision-highlight {
+            color: var(--accent-color);
+        }
+
+        /* Summary List Optimization - Single Card with Internal Numbers */
+        .summary-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 4mm;
+            position: relative;
+            overflow: hidden;
+            /* No external margin */
+        }
+
+        .summary-box ul {
+            padding-left: 0;
+            margin-top: 0;
+        }
+
+        .summary-box ul li {
+            padding-left: 10mm; /* Space for internal number */
+            margin-bottom: 4mm;
+            line-height: 1.5;
+            display: block;
+            position: relative;
+        }
+
+        .summary-box ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Remove default arrow for summary */
+        .summary-box ul li::before {
+            display: none;
+        }
+        
+        /* Number style - positioned inside */
+        .summary-num {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 10pt;
+            min-width: 8mm;
+        }
+
+        /* Content - no border, just text */
+        .summary-content {
+            display: block;
+        }
+
+        .summary-box ul li strong {
+            display: block;
+            color: #fff;
+            font-family: var(--font-main);
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 1mm;
+            letter-spacing: 0.5px;
+        }
+
+        /* Remove // decoration */
+        .summary-box ul li strong::before {
+            content: none;
+        }
+
+        /* Key Projects Grid */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3mm;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 3mm;
+            border-radius: 4px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5mm;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 1.5mm;
+        }
+        
+        .project-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 9.5pt;
+        }
+        
+        .project-role {
+            font-family: var(--font-mono);
+            font-size: 7.5pt;
+            color: var(--accent-color);
+            background: rgba(0, 255, 157, 0.1);
+            padding: 1px 4px;
+            border-radius: 2px;
+            white-space: nowrap;
+        }
+
+        .project-desc {
+            font-size: 8.5pt;
+            line-height: 1.45; /* Improved readability */
+        }
+
+        /* Highlight numbers */
+        .highlight-num {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Experience Section */
+        .job-item {
+            margin-bottom: 6mm;
+            position: relative;
+            padding-left: 14mm; /* Make space for logo line */
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Align items vertically */
+            margin-bottom: 1.5mm;
+            position: relative;
+        }
+
+        .company-logo {
+            position: absolute;
+            left: -14mm;
+            top: 1px; /* Visual alignment fix */
+            width: 10mm;
+            height: 10mm;
+            border-radius: 4px;
+            object-fit: contain;
+            background-color: rgba(255, 255, 255, 0.1); /* Slight background */
+            border: 1px solid var(--border-color);
+        }
+
+        .job-company {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .job-meta {
+            font-family: var(--font-mono);
+            font-size: 8.5pt;
+            color: var(--text-secondary);
+        }
+        
+        .job-title {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 9.5pt;
+            margin-bottom: 2mm;
+            display: inline-block;
+        }
+
+        .job-tag {
+            background: #2a2d35;
+            color: #fff;
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-size: 7.5pt;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .quote-block {
+            font-style: italic;
+            color: #777;
+            font-size: 9pt;
+            margin-bottom: 3mm;
+            padding-left: 3mm;
+            border-left: 2px solid #333;
+        }
+        
+        .job-detail-block {
+            margin-bottom: 3mm;
+        }
+
+        /* Highlighted Project Block */
+        .project-highlight {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            padding: 3mm;
+            margin-bottom: 3mm;
+            position: relative;
+        }
+
+        /* Normal Project Block */
+        .project-normal {
+            border: 1px solid rgba(255, 255, 255, 0.04); /* Subtler border */
+            border-radius: 4px;
+            padding: 3mm;
+            margin-bottom: 3mm;
+            /* No background for visual hierarchy */
+        }
+
+        .project-highlight-title, .project-normal-title {
+            color: #fff;
+            font-weight: 700;
+            font-size: 9.5pt;
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .project-normal-title {
+            color: var(--text-primary); /* Slightly less bright */
+        }
+
+        .project-tag {
+            font-family: var(--font-mono);
+            font-size: 7.5pt;
+            color: var(--accent-color);
+            background: rgba(0, 255, 157, 0.1);
+            padding: 1px 6px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .project-summary {
+            font-size: 9pt;
+            color: #ccc;
+            margin-bottom: 2mm;
+            padding-bottom: 2mm;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            font-weight: 500;
+        }
+        
+        .job-detail-title {
+            color: #ccc;
+            font-weight: 600;
+            font-size: 9.5pt;
+            margin-bottom: 1mm;
+        }
+
+        /* Skills Tags */
+        .skill-item {
+            margin-bottom: 3mm;
+        }
+        .skill-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 10pt;
+            margin-bottom: 1mm;
+        }
+        .skill-desc {
+            font-size: 9.5pt;
+            line-height: 1.3;
+        }
+
+        /* Why Me Section */
+        .why-me-item {
+            margin-bottom: 3mm;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .why-me-num {
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+            margin-right: 2mm;
+            font-weight: 700;
+            min-width: 4mm;
+            font-size: 10pt;
+        }
+        
+        .why-me-text {
+            font-size: 9.5pt;
+            line-height: 1.3;
+        }
+        
+        .why-me-title {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 3mm;
+        }
+        
+        .edu-school {
+            font-weight: 700;
+            color: var(--text-primary);
+            display: block;
+            font-size: 10pt;
+        }
+        
+        .edu-detail {
+            font-size: 8.5pt;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+        }
+
+        /* Decorations */
+        .corner-decor {
+            position: absolute;
+            width: 8mm;
+            height: 8mm;
+            border: 2px solid var(--accent-color);
+            opacity: 0.5;
+        }
+        .top-right { top: 12mm; right: 12mm; border-bottom: none; border-left: none; }
+        .bottom-left { bottom: 12mm; left: 12mm; border-top: none; border-right: none; }
+
+        .scan-line {
+            position: absolute;
+            top: 135mm;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        /* Meta Footer */
+        .meta-footer {
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 7pt;
+            color: rgba(255, 255, 255, 0.2);
+            margin-top: 5mm;
+            padding-bottom: 2mm;
+            letter-spacing: 0.5px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                width: 100% !important;
+                max-width: 100vw !important;
+                min-height: auto !important;
+                background-color: #0f1115;
+                overflow-x: hidden;
+            }
+
+            .resume-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: auto !important;
+                padding: 20px;
+                background: none;
+                gap: 20px;
+                box-sizing: border-box;
+            }
+            
+            /* Ensure all fixed-width elements adapt */
+            .job-item {
+                padding-left: 0 !important;
+            }
+            
+            .company-logo {
+                position: relative !important;
+                left: 0 !important;
+                margin-bottom: 10px;
+            }
+
+            /* Header */
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .header-info h1 {
+                font-size: 24pt;
+                margin-bottom: 5px;
+            }
+
+            .contact-info {
+                text-align: left;
+                width: 100%;
+            }
+
+            .contact-info div {
+                justify-content: flex-start;
+                margin-bottom: 8px;
+            }
+
+            /* Summary */
+            .summary-box {
+                padding: 15px;
+            }
+            
+            .vision-statement {
+                font-size: 11pt;
+            }
+
+            /* Job Header */
+            .job-header {
+                flex-wrap: wrap;
+                gap: 8px;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            .job-company {
+                font-size: 12pt;
+            }
+
+            .job-meta {
+                margin-left: 0;
+                width: 100%;
+                color: var(--text-secondary);
+                font-size: 10pt;
+                margin-top: 2px;
+            }
+            
+            .job-item {
+                margin-bottom: 30px;
+            }
+
+            /* Footer Grid */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .edu-row {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+                border-bottom: 1px dashed rgba(255,255,255,0.1);
+            }
+            
+            .edu-row:last-child {
+                border-bottom: none;
+            }
+            
+            .edu-row div {
+                text-align: left !important;
+            }
+
+            /* Hide Desktop Elements */
+            .page-number-fixed, 
+            .corner-decor, 
+            .scan-line {
+                display: none;
+            }
+        }
+
+        /* Print adjustments */
+        @media print {
+            html, body {
+                background-color: #0f1115 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .resume-container {
+                min-height: auto;
+                background: #0f1115; /* Maintain dark theme in print */
+            }
+            .page-number {
+                position: fixed;
+                bottom: 8mm;
+                right: 12mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Decor -->
+        <div class="corner-decor top-right"></div>
+        <div class="scan-line"></div>
+
+        <!-- Header spanning full width -->
+        <header class="header">
+            <div class="header-info">
+                <h1>陈正豪</h1>
+                <div class="header-title">AI 产品经理 | PRODUCT MANAGER</div>
+            </div>
+            <div class="contact-info">
+                <div><i data-lucide="phone"></i> 135 6897 9264（微信同号）</div>
+                <div><i data-lucide="mail"></i> chenzhenghao94@gmail.com</div>
+                <div><i data-lucide="briefcase"></i> 7 年产品经验 / AI × Design Tools</div>
+            </div>
+        </header>
+
+        <!-- Main Column -->
+        <main class="main-content">
+            
+            <!-- Summary -->
+            <section>
+                <h2><i data-lucide="user"></i>个人总结</h2>
+                <div class="summary-box">
+                    <div class="vision-statement">
+                        希望能打造一款被用户喜爱的 <span class="vision-highlight">AI 生产力工具</span>，定义 <span class="vision-highlight">下一代 AI 产品</span>。
+                    </div>
+                    <ul>
+                        <li>
+                            <span class="summary-num">01</span>
+                            <div class="summary-content">
+                                <strong>设计工具 + AI 界面生成</strong>
+                                主导 Motiff AI 从预研到商业化的完整产品周期，具备 AI 产品 0-1 全链路经验。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="summary-num">02</span>
+                            <div class="summary-content">
+                                <strong>创造者 + 好奇心 + 布道者</strong>
+                                对 AI 前沿保持高敏感度，工作流全面 AI 化（Cursor、Claude Code、Google AI Studio 等），在团队内倡导先进 AI 实践。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="summary-num">03</span>
+                            <div class="summary-content">
+                                <strong>技术敏感度与判断力</strong>
+                                在 AI 生成 UI 项目中，主导了 3 次技术路线的转向与落地，同时建立了相对完善的数据标注、评测流程和体系。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="summary-num">04</span>
+                            <div class="summary-content">
+                                <strong>用户思维与业务思维</strong>
+                                善于通过用户访谈与行业调研，将用户洞察转化为可落地的产品方案。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="summary-num">05</span>
+                            <div class="summary-content">
+                                <strong>强 Ownership 与创业心态</strong>
+                                从业期间始终保持在绩效 Top 水平，乐于在不确定性中探索，善于将模糊目标转化为可执行方案并落地。
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section>
+                <h2><i data-lucide="briefcase"></i>工作经历</h2>
+                
+                <!-- Motiff -->
+                <div class="job-item">
+                    <div class="job-header">
+                        <img src="motiff.webp" alt="Motiff Logo" class="company-logo">
+                        <span class="job-company">看云软件（猿辅导全资） · Motiff 妙多</span>
+                        <span class="job-meta">2022.06 - 至今</span>
+                    </div>
+                    <div class="job-title">AI 产品负责人</div>
+                    <div class="quote-block">
+                        Motiff 是一款 AI 驱动的界面设计工具，致力于探索 AI 时代的产品设计新范式。
+                    </div>
+                    
+                    <div class="project-normal">
+                        <div class="project-normal-title">阶段一：基础能力建设与预研（2022-2023）</div>
+                        <ul>
+                            <li>从教育行业转型进入专业设计工具领域，快速建立行业认知。</li>
+                            <li>负责编辑器基础功能产品设计（画布编辑、图层面板、原型动效等）、性能监控体系搭建。</li>
+                            <li>主导 AI 生成方向预研，探索 AI 在设计工具中的应用可能性。</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-highlight">
+                        <div class="project-highlight-title">
+                            阶段二：AI 生成 UI 预研与验证（2023-2024）
+                            <span class="project-tag">⭐ 核心项目</span>
+                        </div>
+                        <div class="project-summary">
+                            🚀 核心成绩：主导从预研到上线到商业化的完整闭环，3 次技术路线转向均踩准节奏。
+                        </div>
+                        <ul>
+                            <li>作为项目 Owner 主导 AI 生成 UI 的完整预研：机会界定、可行性试验、评测基线设定。</li>
+                            <li><strong>主导 3 次关键技术转向</strong>：
+                                <br>- 第 1 次：验证生图+LoRA 方案、RAG 等方向的局限性，果断放弃。
+                                <br>- 第 2 次：采用「微调 UI 模型 + 指定设计系统」方案快速上线 MVP（2024.06），在当时达到了行业生成 SOTA 水平。
+                                <br>- 第 3 次：在 Claude 3.5 Sonnet V2 发布当天完成评测，推动切换至「代码生成」路线。
+                            </li>
+                            <li>建立完整的 AI 评测体系：多样化评测集、定期专家评测、bad case 驱动迭代。</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-highlight">
+                        <div class="project-highlight-title">
+                            阶段三：Motiff AI 2.0 商业化（2024-2025）
+                            <span class="project-tag">⭐ 核心项目</span>
+                        </div>
+                        <div class="project-summary">
+                            🚀 核心成绩：独立负责妙多 AI 和 Motiff 海外版本的产品规划、迭代与上线，完成商业化验证。
+                        </div>
+                        <ul>
+                            <li>完成 Motiff AI 2.0 完整产品方案设计与分阶段上线策略。</li>
+                            <li><strong>核心功能</strong>：基于代码生成的 UI 生成系统（自研 HTML2Motiff 引擎）；支持 Material/Ant Design/Shadcn 等风格；基于用户设计系统的个性化生成；多模态 Agent 能力。</li>
+                            <li><strong>商业化设计</strong>：订阅收费模式设计。</li>
+                            <li>独立负责 Motiff AI 插件与独立站的产品规划。</li>
+                            <li>完成 5+ 场行业分享与品牌活动，建立产品对外影响力。</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-normal">
+                        <div class="project-normal-title">💡 个人沉淀</div>
+                        <ul>
+                            <li><strong>技术可行性验证</strong>：建立了一套从「技术边界探索 → 产品化落地 → 持续迭代」的完整方法论，能够在 AI 技术快速迭代的环境中找到技术与产品的平衡点。</li>
+                            <li><strong>AI 评测体系</strong>：建立多样化评测集、定期专家评测机制，从「保证底线」转向「追求惊喜」的评测思维。</li>
+                            <li><strong>敏捷验证</strong>：保持对市面上一线新模型的高敏感度和高强度手感，能够第一时间评估新技术对产品的影响并快速决策。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Zebra -->
+                <div class="job-item">
+                    <div class="job-header">
+                        <img src="斑马.webp" alt="Zebra Logo" class="company-logo">
+                        <span class="job-company">猿辅导 · 斑马 AI 课</span>
+                        <span class="job-meta">2020.12 - 2022.06</span>
+                    </div>
+                    <div>
+                        <span class="job-title">产品经理</span>
+                        <span class="job-tag">绩效 A（前 20%）</span>
+                    </div>
+                    <div class="project-highlight">
+                        <div class="project-highlight-title">
+                            项目：辅导老师工作台重构
+                            <span class="project-tag">⭐ 核心项目</span>
+                        </div>
+                        <div class="project-summary">
+                            🚀 核心成绩：主导 2 万+ 老师工作台重构，建立标准化沟通任务机制 → 转化率 14% → 16.5%。
+                        </div>
+                        <ul>
+                            <li>将服务周期迭代为「参课-完课-学情-转化-断课」阶段，结合分层策略设计沟通任务推送机制。</li>
+                            <li>为管理者提供核心数据看板，聚合用户画像标签信息，支撑精细化运营与差异化服务。</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-normal">
+                        <div class="project-normal-title">增长与效率迭代</div>
+                        <ul>
+                            <li><strong>用户分层体系</strong>：引入预测续报概率模型，设计「S/A/B/C」分层与差异化沟通策略 → 转化率 18% → 21.5%。</li>
+                            <li><strong>完课率优化</strong>：按完课行为分类，设计针对性催课沟通工具 → 完课率 65% → 69%。</li>
+                            <li><strong>目标管理工具</strong>：设计「总部下达-管理者设定-老师达成」目标管理路径 → 达成率 +10%，管理者 NPS -10% → 41.3%。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Codemao -->
+                <div class="job-item" style="margin-bottom: 0;">
+                    <div class="job-header">
+                        <img src="有道卡搭.webp" alt="Codemao Logo" class="company-logo">
+                        <span class="job-company">网易 · 有道卡搭</span>
+                        <span class="job-meta">2019.07 - 2020.12</span>
+                    </div>
+                    <div>
+                        <span class="job-title">产品经理</span>
+                        <span class="job-tag">绩效 S（前 10%，连续 2 年）</span>
+                    </div>
+                    <div class="project-normal">
+                        <div class="project-normal-title">授课模式转型</div>
+                        <ul>
+                            <li>主导「AI 互动课件 + 小班音视频教室 + 助教答疑」双师模式的产品方案设计与落地，替代原大班直播模式。</li>
+                            <li>完课率 27% → 58%（+2 倍），转化率 3.5% → 10.8%（+3 倍），课时单价提升 30%+，助教人效 60 → 150 人（+2.5 倍）。</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-highlight">
+                        <div class="project-highlight-title">
+                            项目：课程销售探索
+                            <span class="project-tag">⭐ 核心项目</span>
+                        </div>
+                        <div class="project-summary">
+                            🚀 核心成绩：从 0 搭建 6 人全职销售团队并验证课程销售模式，体验课转化率 5% → 16%（+3 倍）。
+                        </div>
+                        <ul>
+                            <li>前期通过轮岗沉淀销售服务经验，建立「投放-触达-跟课-转化-关单-数据总结」的全流程分析机制。</li>
+                            <li>沉淀用户分级标准与销售 SOP，组织 10 场主题培训，制定上岗能力考察标准，团队后续顺利承接至运营。</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- Footer: Education, Campus Projects, Skills -->
+        <footer class="resume-footer">
+
+            <!-- Education -->
+            <section class="resume-education">
+                <h2><i data-lucide="graduation-cap"></i>教育背景</h2>
+                <div class="edu-row">
+                    <span class="edu-school">电子科技大学</span>
+                    <span class="edu-degree">硕士（2 篇 EI 论文，2 项专利）</span>
+                    <span class="edu-major">控制科学与工程</span>
+                    <span class="edu-time">2016.09-2019.06</span>
+                </div>
+                <div class="edu-row">
+                    <span class="edu-school">天津科技大学</span>
+                    <span class="edu-degree">本科（专业第一，国家奖学金）</span>
+                    <span class="edu-major">测控技术与仪器</span>
+                    <span class="edu-time">2012.09-2016.06</span>
+                </div>
+            </section>
+
+            <!-- Campus Projects -->
+            <section>
+                <h2><i data-lucide="rocket"></i>校园项目</h2>
+                <div class="edu-item">
+                    <div class="edu-row" style="margin-bottom: 1mm; grid-template-columns: 1fr 1fr auto;">
+                        <span class="edu-school">可穿戴心肺音监测装置</span>
+                        <span class="edu-degree">研究生课题</span>
+                        <span class="edu-time">2016-2019</span>
+                    </div>
+                    <div style="font-size: 9.5pt; color: #777; line-height: 1.4;">
+                        基于压电传感器的可穿戴心音和肺音监测装置研究；发表 2 篇 EI 论文，获 2 项专利。
+                    </div>
+                </div>
+                <div class="edu-item" style="margin-top: 3mm;">
+                    <div class="edu-row" style="margin-bottom: 1mm; grid-template-columns: 1fr 1fr auto;">
+                        <span class="edu-school">话心 · 高校心理轻辅导平台</span>
+                        <span class="edu-degree">创始人</span>
+                        <span class="edu-time">2017-2019</span>
+                    </div>
+                    <div style="font-size: 9.5pt; color: #777; line-height: 1.4;">
+                        从 0 完成产品立项、MVP 设计与运营团队搭建；获全国研究生移动终端应用创新大赛一等奖、华为“创想杯”全国六强、创青春省金奖。
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Hobbies -->
+            <section>
+                <h2><i data-lucide="smile"></i>兴趣爱好</h2>
+                <div class="skill-item">
+                    <div class="skill-title">运动</div>
+                    <div class="skill-desc">喜爱长跑（月跑量 100km）、爱好篮球和足球的虎扑 JRs。</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-title">阅读 & 播客</div>
+                    <div class="skill-desc">年均读 20+ 本（历史、互联网、商业类）；播客年收听时长 500+ 小时；最近一年业余时间都在看海外产品博客、Twitter 等 AI 内容。</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-title">写作、动手与创造</div>
+                    <div class="skill-desc">公众号「豪大说」持续写作 10 年；最近在 Vibe Writing —— 基于 Cursor + Obsidian 打造了从内容输入到输出的完整自动化工作流。业余时间都在 Vibe coding 各种好玩的项目；最近沉迷于拓竹 3D 打印各种小物件。</div>
+                </div>
+            </section>
+
+        </footer>
+        
+        <div class="meta-footer">
+            Vibe Coded by ChenZhenghao in Cursor
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
